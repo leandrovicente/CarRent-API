@@ -1,6 +1,20 @@
 version: '3.7'
 
 services:
+  database:
+    image: postgres
+    container_name: database_typescript
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=typescript
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+      
   app:
     build: .
     container_name: typescript
@@ -8,3 +22,9 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
+    network_mode: host
+
+
+volumes:
+  pgdata:
+    driver: local
