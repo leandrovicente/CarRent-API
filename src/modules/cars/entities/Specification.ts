@@ -7,7 +7,7 @@ class Specification {
 
   description:string;
 
-  create_at:Date;
+  created_at:Date;
 
   constructor() {
     if (!this.id) {
