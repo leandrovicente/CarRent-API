@@ -4,10 +4,18 @@ import {ISpecificationsRepository,ICreateSpecificationDTO} from "./../ISpecifica
 
 class SpecificationsRepository implements ISpecificationsRepository{
     private specification: Specification[];
+    private static INSTANCE : SpecificationsRepository;
 
     constructor(){
         this.specification = [];
     }
+
+    public static getInstance() : SpecificationsRepository{
+        if(!SpecificationsRepository.INSTANCE){
+            SpecificationsRepository.INSTANCE = new SpecificationsRepository();
+        }
+        return SpecificationsRepository.INSTANCE;
+      }
  
     create({description,name}:ICreateSpecificationDTO): void{
         const specification = new Specification();
