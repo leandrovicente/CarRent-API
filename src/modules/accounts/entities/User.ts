@@ -3,7 +3,6 @@ import { Column, CreateDateColumn, Entity } from "typeorm";
 
 @Entity("users")
 class User {
-  
   @Column()
   id: string;
 
@@ -20,7 +19,7 @@ class User {
   password: string;
 
   @Column()
-  driver_lincese: string;
+  driver_license: string;
 
   @Column()
   isAdimin: boolean;
@@ -28,10 +27,9 @@ class User {
   @CreateDateColumn()
   created_at: Date;
 
-  constructor(){
-    if(!this.id){
-      this.id =uuidV4();
-
+  constructor() {
+    if (!this.id) {
+      this.id = uuidV4();
     }
   }
 }
