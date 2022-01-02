@@ -10,7 +10,9 @@ Api em Nodejs com Typescript:
 - Jest;
 - SOLID;
 - Designer Pattern;
-- Yarn.
+- Yarn;
+- Swagger;
+
 
 
 ---
